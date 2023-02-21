@@ -234,3 +234,20 @@ curl --location --request POST 'LAMBDA_FUNCTION_ENDPOINT_URL' \
     "data": "This is the message"
 }'
 ```
+
+
+## Troubleshooting
+
+Be mindful of the OS used when building using : `GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o main main.go`
+
+e.g. On linux Mint when the build is zipped and uploaded to the lambda function, the test returned the following error.
+``` 
+2023/02/21 00:28:09 exit status 1
+/var/task/main: /lib64/libc.so.6: version `GLIBC_2.32' not found (required by /var/task/main)
+/var/task/main: /lib64/libc.so.6: version `GLIBC_2.34' not found (required by /var/task/main)
+2023/02/21 00:31:33 exit status 1
+START RequestId: d80b8a19-5ea9-4daa-9b47-8d3d7bda283a Version: $LATEST
+RequestId: d80b8a19-5ea9-4daa-9b47-8d3d7bda283a Error: Runtime exited with error: exit status 1
+Runtime.ExitError
+END RequestId: d80b8a19-5ea9-4daa-9b47-8d3d7bda283a
+REPORT RequestId: d80b8a19-5ea9-4daa-9b47-8d3d7bda283a	Duration: 16.05 ms	Billed Duration: 17 ms	Memory Size: 512 MB	Max Memory Used: 4 MB	```
