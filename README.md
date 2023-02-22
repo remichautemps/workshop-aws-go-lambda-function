@@ -1,5 +1,5 @@
 # workshop-aws-go-lambda-function
-A step-by-step guide to write a lambda function in golang.
+A step-by-step guide to write a lambda function in golang. (90 min)
 
 In this project you'll learn:
 - How to set up your AWS credentials to use your AWS account
