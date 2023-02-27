@@ -95,7 +95,7 @@ func main() {
 }
 ```
 
-NOTE: now our program is expecting to be called by the Lambda runtime. It will return a string and an error.
+NOTE: now our program is relying on an external library to run since we imported github.com/aws/aws-lambda-go/lambda. Run `go mod init mylambda`. It will pull all the module dependencies.
 
 NOTE: Try to run it locally with `go run main.go`. It will not work because the function is expecting to be called by the Lambda runtime.
 
