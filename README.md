@@ -235,6 +235,11 @@ curl --location --request POST 'LAMBDA_FUNCTION_ENDPOINT_URL' \
 }'
 ```
 
+A little more advance cmd would be:
+```bash
+curl -s -X POST LAMBDA_FUNCTION_ENDPOINT_URL --data '{"message": "success"}' | base64 -d | jq .message; echo
+```
+
 
 ## Troubleshooting
 
